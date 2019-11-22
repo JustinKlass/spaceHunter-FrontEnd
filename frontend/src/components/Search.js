@@ -107,17 +107,13 @@ class Search extends Component {
                                 <p className = 'inline'>{match.occupancy}</p>
                                 <p className = 'inline'>{match.available}</p>
                             </div>
-                        </div>
+                            </div>
                         )
                     })
                 }
-
             </div>
-          );
-        })}
-      </div>
-    );
-  }
+        );
+    }
 }
 
 export default Search;
