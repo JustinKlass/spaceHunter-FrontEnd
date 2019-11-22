@@ -85,9 +85,9 @@ class Search extends Component {
                 <div className = 'form'>
                     {/* <label ></label> */}
                     <input type='text' placeholder='Where To Now?' onChange = {this.handleChange} className = 'searchBar'></input>
-                    <input type='submit'placeholder='Search' onClick={() => {
-                        {this.state.bool === false ? this.getAll(): this.getRentals()}}
-                    }></input>
+                    <input type='submit'placeholder='Search'  onClick={() => {
+              this.state.bool === false ? this.getAll() : this.getRentals();
+            }}></input>
                 </div>
                 {
                     this.state.match.map((match) => {
@@ -113,21 +113,11 @@ class Search extends Component {
                 }
 
             </div>
-        );
-    }
+          );
+        })}
+      </div>
+    );
+  }
 }
 
-export default Search
-
-
-
-
-
-
-
-
-
-
-// City: {type: String}
-// State: {type: String}
-// Country: {type: String}
+export default Search;
