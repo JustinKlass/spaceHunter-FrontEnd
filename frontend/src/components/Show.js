@@ -5,7 +5,6 @@ class Show extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            location: 'london',
             results: []
         }
     }
@@ -23,9 +22,6 @@ class Show extends Component {
             console.log(this.state.results)
     }
 
-    search() {
-
-    }
 
     render() {
         return(
