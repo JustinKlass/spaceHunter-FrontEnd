@@ -1,7 +1,7 @@
 import React from 'react';
 // import axios from 'axios';
-// import Search from './components/Search.js'
-import Show from './components/Show.js'
+import Search from './components/Search.js'
+// import Show from './components/Show.js'
 import './css/skeleton.css'
 import './css/bulma.css';
 import './css/App.css';
@@ -29,8 +29,8 @@ function App() {
                     <img src = '../images/spaceHunterLogo.png' alt = 'Space Hunters Logo' />
                 </div>
             </header>
-            <Show baseURL = {baseURL}/>
-            {/* <Search baseURL = {baseURL}/> */}
+            {/* <Show baseURL = {baseURL}/> */}
+            <Search baseURL = {baseURL}/>
 
         </div>
     );
