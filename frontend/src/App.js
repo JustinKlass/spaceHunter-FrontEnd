@@ -3,9 +3,7 @@ import React, { Component } from "react";
 // import axios from 'axios';
 import Search from "./components/Search.js";
 import NewProfile from "./components/NewProfile.js";
-import "./css/skeleton.css";
-import "./css/bulma.css";
-import "./css/App.css";
+import "bulma/css/bulma.css";
 
 let baseURL = process.env.REACT_APP_BASEURL;
 
@@ -39,20 +37,26 @@ class App extends Component {
 
   togglePopUp() {
     this.setState({
-        showNew: !this.state.showNew
-    })
-  }  
+      showNew: !this.state.showNew
+    });
+  }
 
   render() {
     return (
       // OUTER MOST DIV
       <div>
-        <nav className = 'nav'>
-            <ul>
-                <li><button onClick = {this.togglePopUp}>New</button></li>
-                <li><button>Log In</button></li>
-                <li><button>Register</button></li>
-            </ul>
+        <nav className="nav" role="navigation" aria-label="main navigation">
+          <div className="navitem">
+            <button className="button is-black" onClick={this.togglePopUp}>
+              New
+            </button>
+          </div>
+          <div className="navitem">
+            <button className="button is-black ">Log In</button>
+          </div>
+          <div className="navitem">
+            <button className="button is-black">Register</button>
+          </div>
         </nav>
         {/* START OF HEADER */}
         <header className="header">
@@ -61,15 +65,24 @@ class App extends Component {
           </div>
         </header>
         <Search baseURL={baseURL} />
-        {this.state.showNew ?
-        <div className = 'popup'>
-            <div  className = 'popup\_inner'>
-                <button onClick = {this.togglePopUp} className='popup\_inner'>Exit</button>
-                <NewProfile handleAddRental={this.handleAddRental} baseURL={baseURL} />
+        {this.state.showNew ? (
+          <div className="newRentalPopUp">
+            <div className="newRentalPopUpInner">
+              <NewProfile
+                handleAddRental={this.handleAddRental}
+                baseURL={baseURL}
+                togglePopUp={this.togglePopUp}
+              />
             </div>
-        </div>
-        : null
-        }
+            <button
+              className="button is-white"
+              onClick={this.togglePopUp}
+              id="exitBtn"
+            >
+              X
+            </button>
+          </div>
+        ) : null}
       </div>
     );
   }
