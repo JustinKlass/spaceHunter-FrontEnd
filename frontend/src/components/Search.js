@@ -16,6 +16,8 @@ class Search extends Component {
             match: [],
             filtered: []
         }
+        this.getAll = this.getAll.bind(this);
+        this.update = this.update.bind(this);
         this.getRentals = this.getRentals.bind(this);
         this.togglePopUp = this.togglePopUp.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -38,9 +40,10 @@ class Search extends Component {
         const response = await axios.get(`${this.props.baseURL}/rental`);
         const data = response.data
         this.setState({
-            results: data,
+            filtered: [],
+            results: data
         })
-        this.state.results.map(result => {
+        this.state.results.forEach(result => {
             if (result.city.toLowerCase() === this.state.city || 
                 result.state.toLowerCase() === this.state.state || 
                 result.country.toLowerCase() === this.state.country) {
@@ -48,7 +51,7 @@ class Search extends Component {
                 this.setState({
                     match: this.state.filtered
                 });
-                console.log(this.state.match)
+                console.log(this.state.match);
             }
         })
     }
@@ -80,6 +83,12 @@ class Search extends Component {
         })
     }  
 
+    update() {
+        this.setState({
+            show: !this.state.show
+        })
+    }
+
 
     render() {
         return (
@@ -101,7 +110,7 @@ class Search extends Component {
                                     <div className = 'popup'>
                                         <div className='popup\_inner'>
                                             <button onClick = {this.togglePopUp} className='popup\_inner'>Exit</button>
-                                            <PopUp rental = {this.state.currentPop[0]} baseURL={this.props.baseURL}/>
+                                            <PopUp rental = {this.state.currentPop[0]} baseURL={this.props.baseURL} getAll = {this.getAll} update = {this.update}/>
                                         </div>
                                     </div>
                                     : null

@@ -95,6 +95,7 @@ class NewProfile extends Component {
       available: true
     });
     this.props.handleAddRental(response.data);
+    this.props.togglePopUp();
   }
 
   render() {
