@@ -3,7 +3,6 @@ import React, { Component } from "react";
 // import axios from 'axios';
 import Search from "./components/Search.js";
 import NewProfile from "./components/NewProfile.js";
-// import Show from './components/Show.js'
 import "./css/skeleton.css";
 import "./css/bulma.css";
 import "./css/App.css";
@@ -24,10 +23,13 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      rentals: []
+      rentals: [],
+      showNew: false
     };
+    this.togglePopUp = this.togglePopUp.bind(this);
     this.handleAddRental = this.handleAddRental.bind(this);
   }
+
   handleAddRental(NewProfile) {
     console.log(NewProfile);
     this.setState({
@@ -35,19 +37,39 @@ class App extends Component {
     });
   }
 
+  togglePopUp() {
+    this.setState({
+        showNew: !this.state.showNew
+    })
+  }  
+
   render() {
     return (
       // OUTER MOST DIV
       <div>
+        <nav className = 'nav'>
+            <ul>
+                <li><button onClick = {this.togglePopUp}>New</button></li>
+                <li><button>Log In</button></li>
+                <li><button>Register</button></li>
+            </ul>
+        </nav>
         {/* START OF HEADER */}
         <header className="header">
           <div>
             <img src="../images/spaceHunterLogo.png" alt="Space Hunters Logo" />
           </div>
         </header>
-        {/* <Show baseURL = {baseURL}/> */}
-        <NewProfile handleAddRental={this.handleAddRental} baseURL={baseURL} />
         <Search baseURL={baseURL} />
+        {this.state.showNew ?
+        <div className = 'popup'>
+            <div  className = 'popup\_inner'>
+                <button onClick = {this.togglePopUp} className='popup\_inner'>Exit</button>
+                <NewProfile handleAddRental={this.handleAddRental} baseURL={baseURL} />
+            </div>
+        </div>
+        : null
+        }
       </div>
     );
   }
