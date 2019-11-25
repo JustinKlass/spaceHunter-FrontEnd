@@ -31,7 +31,7 @@ class App extends Component {
   handleAddRental(NewProfile) {
     console.log(NewProfile);
     this.setState({
-      results: [...this.state.results, NewProfile]
+      rentals: [...this.state.rentals, NewProfile]
     });
   }
 
