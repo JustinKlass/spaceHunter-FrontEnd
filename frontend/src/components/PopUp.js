@@ -26,7 +26,7 @@ class PopUp extends React.Component {
                         <p>{this.props.rental.price}$/Night</p>
                     </div>
                     <div className = 'inline buttons'>
-                        <DeleteRental baseURL = {this.props.baseURL} rental = {this.props.rental}/>
+                        <DeleteRental baseURL = {this.props.baseURL} rental = {this.props.rental} getAll = {this.props.getAll} update = {this.props.update}/>
                         <UpdateRental baseURL = {this.props.baseURL} rental = {this.props.rental} getAll = {this.props.getAll} update = {this.props.update}/>
                     </div>
                         {/* <p className = 'inline like'>{this.props.rental.like}</p> */}

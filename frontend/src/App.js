@@ -64,12 +64,11 @@ class App extends Component {
         {this.state.showNew ?
         <div className = 'popup'>
             <div  className = 'popup\_inner'>
-                <button onClick = {this.togglePopUp} className='popup\_inner'>Exit</button>
-                <NewProfile handleAddRental={this.handleAddRental} baseURL={baseURL} />
+                <button onClick = {this.togglePopUp} id = 'button'>Exit</button>
+                <NewProfile handleAddRental={this.handleAddRental} baseURL={baseURL} togglePopUp = {this.togglePopUp}/>
             </div>
         </div>
-        : null
-        }
+        : null }
       </div>
     );
   }

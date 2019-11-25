@@ -30,8 +30,10 @@ class DeleteRental extends Component {
     this.setState({
       rental: filteredRentals
     });
-    this.refreshPage();
+    this.props.getAll();
+    this.props.update();
   }
+
   render() {
       return (
         <button onClick={() => this.deleteRental(this.props.rental._id)}>Delete</button>

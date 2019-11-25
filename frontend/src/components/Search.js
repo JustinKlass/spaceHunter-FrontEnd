@@ -40,9 +40,10 @@ class Search extends Component {
         const response = await axios.get(`${this.props.baseURL}/rental`);
         const data = response.data
         this.setState({
-            results: data,
+            filtered: [],
+            results: data
         })
-        this.state.results.map(result => {
+        this.state.results.forEach(result => {
             if (result.city.toLowerCase() === this.state.city || 
                 result.state.toLowerCase() === this.state.state || 
                 result.country.toLowerCase() === this.state.country) {
@@ -50,7 +51,7 @@ class Search extends Component {
                 this.setState({
                     match: this.state.filtered
                 });
-                console.log(this.state.match)
+                console.log(this.state.match);
             }
         })
     }
