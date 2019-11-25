@@ -11,6 +11,10 @@ class DeleteRental extends Component {
     this.getRental = this.getRental.bind(this);
   }
 
+  refreshPage() {
+      window.location.reload(false);
+  }
+
   async getRental() {
     const apiData = await axios(`${this.props.baseURL}/rental`);
     const data = apiData.data;
@@ -26,6 +30,7 @@ class DeleteRental extends Component {
     this.setState({
       rental: filteredRentals
     });
+    this.refreshPage();
   }
   render() {
       return (
