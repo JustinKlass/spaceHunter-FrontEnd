@@ -1,14 +1,19 @@
 import React from 'react';   
 import DeleteRental from './DeleteRental.js';
+import UpdateRental from './UpdateRental.js'
+import "../css/App.css";
+import "bulma/css/bulma.css";
 
 class PopUp extends React.Component {  
     constructor(props) {
         super(props);
         this.state = {
+            showEdit: false
         }
     }
 
     render() {
+let cityState = `${this.props.rental.city},${this.props.rental.state}`;
         return (
             <div>
                 <div>
@@ -24,14 +29,22 @@ class PopUp extends React.Component {
                         <p>{this.props.rental.price}$/Night</p>
                     </div>
                     <div className = 'inline buttons'>
-                        <DeleteRental baseURL = {this.props.baseURL} rental = {this.props.rental}/>
-                        <button>Edit</button>
+                        <DeleteRental baseURL = {this.props.baseURL} rental = {this.props.rental} getAll = {this.props.getAll} update = {this.props.update}/>
+                        <UpdateRental baseURL = {this.props.baseURL} rental = {this.props.rental} getAll = {this.props.getAll} update = {this.props.update}/>
                     </div>
+<div>
+            <iframe
+              title="location"
+              samesite="None"
+              width="100"
+              height="100"
+              src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyB0KXJrVh4G4vAfEoEU2_fEcjXsQDKpuvE&q=${cityState}`}
+            ></iframe>
+          </div>
                         {/* <p className = 'inline like'>{this.props.rental.like}</p> */}
                 </div>
             </div>
         );  
     }  
 }  
-
 export default PopUp;

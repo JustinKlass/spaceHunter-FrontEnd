@@ -4,11 +4,15 @@ class DeleteRental extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        rental: []
+      rental: []
     };
 
     this.deleteRental = this.deleteRental.bind(this);
     this.getRental = this.getRental.bind(this);
+  }
+
+  refreshPage() {
+    window.location.reload(false);
   }
 
   async getRental() {
@@ -26,11 +30,16 @@ class DeleteRental extends Component {
     this.setState({
       rental: filteredRentals
     });
+    this.props.getAll();
+    this.props.update();
   }
+
   render() {
-      return (
-        <button onClick={() => this.deleteRental(this.props.rental._id)}>Delete</button>
-      )
+    return (
+      <button onClick={() => this.deleteRental(this.props.rental._id)}>
+        Delete
+      </button>
+    );
   }
 }
 export default DeleteRental;
