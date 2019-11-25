@@ -13,7 +13,8 @@ class Search extends Component {
             state: null,
             city: null,
             results: [],
-            match: []
+            match: [],
+            filtered: []
         }
         this.getRentals = this.getRentals.bind(this);
         this.togglePopUp = this.togglePopUp.bind(this);
@@ -37,13 +38,16 @@ class Search extends Component {
         const response = await axios.get(`${this.props.baseURL}/rental`);
         const data = response.data
         this.setState({
-            results: data
+            results: data,
         })
         this.state.results.map(result => {
-            if (result.location === this.state.location) {
+            if (result.city.toLowerCase() === this.state.city || 
+                result.state.toLowerCase() === this.state.state || 
+                result.country.toLowerCase() === this.state.country) {
+                this.state.filtered.push(result)
                 this.setState({
-                    match: [result]
-                })
+                    match: this.state.filtered
+                });
                 console.log(this.state.match)
             }
         })
@@ -53,12 +57,13 @@ class Search extends Component {
         if (event.target.value === '' || event.target.value === null) {
             this.setState({
                 bool: false,
-                location: event.target.value
             });
         } else {
             this.setState({
                 bool: true,
-                location: event.target.value.toLowerCase()
+                city: event.target.value.toLowerCase(),
+                state: event.target.value.toLowerCase(),
+                country: event.target.value.toLowerCase()
             });
 
         }
@@ -70,11 +75,9 @@ class Search extends Component {
             return selected._id === event.currentTarget.id;
         })
         this.setState({
-            currentPop: selected
+            currentPop: selected,
+            show: !this.state.show
         })
-        // await this.setState({  
-        //      show: !this.state.show
-        // });
     }  
 
 
@@ -92,21 +95,30 @@ class Search extends Component {
                 {
                     this.state.match.map((match) => {
                         return(
-                            <div className = 'childContainer' onClick={this.togglePopUp} id={match._id} key={match._id}>
+                            <div key={match._id} className = 'childContainer'>
                                 {
-                                    this.state.currentPop ? <PopUp rental = {this.state.currentPop[0]}/> : null
+                                    this.state.currentPop && this.state.show ? 
+                                    <div className = 'popup'>
+                                        <div className='popup\_inner'>
+                                            <button onClick = {this.togglePopUp} className='popup\_inner'>Exit</button>
+                                            <PopUp rental = {this.state.currentPop[0]} baseURL={this.props.baseURL}/>
+                                        </div>
+                                    </div>
+                                    : null
                                 }
-                            <img className = 'childImage' src = {match.image} alt = {match.description}/>
-                            <div className = 'block'>
-                                <p className = 'inline'>{match.city}</p>
-                                <p className = 'inline'>{match.state}</p>
-                                <p className = 'inline'>{match.country}</p>
-                                <p className = 'inline'>{match.owner}</p>
-                                <p className = 'inline like'>{match.like}</p>
-                                <p className = 'inline'>{match.price}</p>
-                                <p className = 'inline'>{match.occupancy}</p>
-                                <p className = 'inline'>{match.available}</p>
-                            </div>
+                                <div className = '' id = {match._id} onClick = {this.togglePopUp}>
+                                    <img className = 'childImage' src = {match.image} alt = {match.description}/>
+                                    <div className = 'block'>
+                                        <p className = 'inline'>{match.city}</p>
+                                        <p className = 'inline'>{match.state}</p>
+                                        <p className = 'inline'>{match.country}</p>
+                                        <p className = 'inline'>{match.owner}</p>
+                                        <p className = 'inline like'>{match.like}</p>
+                                        <p className = 'inline'>{match.price}</p>
+                                        <p className = 'inline'>{match.occupancy}</p>
+                                        <p className = 'inline'>{match.available}</p>
+                                    </div>
+                                </div>
                             </div>
                         )
                     })

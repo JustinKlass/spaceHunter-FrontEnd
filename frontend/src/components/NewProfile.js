@@ -99,117 +99,123 @@ class NewProfile extends Component {
 
   render() {
     return (
-      <form className="newRental" onSubmit={this.handleSubmit}>
-        <label htmlFor="owner">Owner</label>
-        <input
-          className="newChild1"
-          type="text"
-          id="owner"
-          name="owner"
-          onChange={this.handleOwnerChange}
-          value={this.state.owner}
-          placeholder="add name"
-        />
-        <label htmlFor="city">City</label>
-        <input
-          className="newChild1"
-          type="text"
-          id="city"
-          name="city"
-          onChange={this.handleCityChange}
-          value={this.state.city}
-          placeholder="add city"
-        />
-        <label htmlFor="state">State</label>
-        <input
-          className="newChild1"
-          type="text"
-          id="state"
-          name="state"
-          onChange={this.handleStateChange}
-          value={this.state.state}
-          placeholder="add state"
-        />
-        <label htmlFor="country">Country</label>
-        <input
-          className="newChild1"
-          type="text"
-          id="country"
-          name="country"
-          onChange={this.handleCountryChange}
-          value={this.state.country}
-          placeholder="add country"
-        />
-        <label htmlFor="price">Price</label>
-        <input
-          className="newChild1"
-          type="number"
-          id="price"
-          name="price"
-          onChange={this.handlePriceChange}
-          value={this.state.price}
-          placeholder="add price"
-        />
-        <label htmlFor="contactInfo">Contact Info</label>
-        <input
-          className="newChild1"
-          type="text"
-          id="contactInfo"
-          name="contactInfo"
-          onChange={this.handleContactInfoChange}
-          value={this.state.contactInfo}
-          placeholder="add contact info"
-        />
-        <label htmlFor="occupancy">Occupancy</label>
-        <input
-          className="newChild1"
-          type="string"
-          id="occupancy"
-          name=" occupancy"
-          onChange={this.handleOccupancyChange}
-          value={this.state.occupancy}
-          placeholder="how many people?"
-        />
-        <label htmlFor="like">Like?</label>
-        <input
-          className="newChild1"
-          type="number"
-          id="like"
-          name="like"
-          onChange={this.handleLikeChange}
-          value={this.state.like}
-        />
-        <label htmlFor="description">Description</label>
-        <input
-          className="newChild1"
-          type="string"
-          id="description"
-          name="description"
-          onChange={this.handleDescriptionChange}
-          value={this.state.description}
-          placeholder="description"
-        />
-        <label htmlFor="image">Image</label>
-        <input
-          className="newChild1"
-          type="string"
-          id="image"
-          name="image"
-          onChange={this.handleImageChange}
-          value={this.state.image}
-        />
-        <label htmlFor="available">Available</label>
-        <input
-          className="newChild1"
-          type="radio"
-          id="available"
-          name="available"
-          onChange={this.handleAvailableChange}
-          value={this.state.available}
-        />
-        <br />
-        <input className="newChild3" type="submit" value="Add Rental" />
-      </form>
+    <div>  
+        <div className='popup\_inner'>
+            <form className="newRental" onSubmit={this.handleSubmit}>
+            <div className ='block'>
+                <label htmlFor="owner" className = 'inline'>Owner</label>
+                <input
+                    className="newChild1"
+                    type="text"
+                    id="owner"
+                    name="owner"
+                    onChange={this.handleOwnerChange}
+                    value={this.state.owner}
+                    placeholder="add name"
+                />
+                <label htmlFor="city" className = 'inline'>City</label>
+                <input
+                    className="newChild1"
+                    type="text"
+                    id="city"
+                    name="city"
+                    onChange={this.handleCityChange}
+                    value={this.state.city}
+                    placeholder="add city"
+                />
+                <label htmlFor="state" className = 'inline'>State</label>
+                <input
+                    className="newChild1"
+                    type="text"
+                    id="state"
+                    name="state"
+                    onChange={this.handleStateChange}
+                    value={this.state.state}
+                    placeholder="add state"
+                />
+                <label htmlFor="country" className = 'inline'>Country</label>
+                <input
+                    className="newChild1"
+                    type="text"
+                    id="country"
+                    name="country"
+                    onChange={this.handleCountryChange}
+                    value={this.state.country}
+                    placeholder="add country"
+                />
+            </div>
+            <label htmlFor="price" className = 'inline'>Price</label>
+            <input
+                className="newChild1" 
+                type="number" 
+                id="price" 
+                name="price"
+                onChange={this.handlePriceChange}
+                value={this.state.price}
+                placeholder="add price"
+            />
+            <label htmlFor="contactInfo" className = 'inline'>Contact Info</label>
+            <input
+                className="newChild1"
+                type="text"
+                id="contactInfo"
+                name="contactInfo"
+                onChange={this.handleContactInfoChange}
+                value={this.state.contactInfo}
+                placeholder="add contact info"
+            />
+            <label htmlFor="occupancy" className = 'inline'>Occupancy</label>
+            <input
+                className="newChild1"
+                type="string"
+                id="occupancy"
+                name=" occupancy"
+                onChange={this.handleOccupancyChange}
+                value={this.state.occupancy}
+                placeholder="how many people?"
+            />
+            <label htmlFor="like" className = 'inline'>Like?</label>
+            <input
+                className="newChild1"
+                type="number"
+                id="like"
+                name="like"
+                onChange={this.handleLikeChange}
+                value={this.state.like}
+            />
+            <label htmlFor="description" className = 'inline'>Description</label>
+            <input
+                className="newChild1"
+                type="string"
+                id="description"
+                name="description"
+                onChange={this.handleDescriptionChange}
+                value={this.state.description}
+                placeholder="description"
+            />
+            <label htmlFor="image" className = 'inline'>Image</label>
+            <input
+                className="newChild1"
+                type="string"
+                id="image"
+                name="image"
+                onChange={this.handleImageChange}
+                value={this.state.image}
+            />
+            <label htmlFor="available" className = 'inline'>Available</label>
+            <input
+                className="newChild1"
+                type="radio"
+                id="available"
+                name="available"
+                onChange={this.handleAvailableChange}
+                value={this.state.available}
+            />
+            <br />
+            <input className="newChild3" type="submit" value="Add Rental" />
+            </form>
+        </div>
+    </div>
     );
   }
 }

@@ -44,30 +44,55 @@
 }
 
 .popup {  
-    position: fixed;  
-    width: 55%;  
-    height: 55%;  
     top: 0;  
     left: 0;  
     right: 0;  
     bottom: 0;  
+    width: 55%;  
+    height: 55%;  
     margin: auto;
+    position: fixed;  
     border-radius: 5%;
-    background-color: rgba(239, 239, 239, 0.75);  
+    background-color: rgba(239, 239, 239, 1);  
   }  
-  .popup\_inner {  
-    position: absolute;  
+.popup\_inner {  
+    top: 25%; 
     left: 25%;  
     right: 25%;  
-    top: 25%;  
     bottom: 25%;  
     margin: auto;  
-    border-radius: 20px;  
+    border-radius: 10%;  
+    position: absolute; 
     background: white;  
-  }
+}
 
-  .cardImage {
-      width: 25%;
-      height: 25%;
-      border-radius: 5%;
-  }
+.cardImage {
+    width: 40%;
+    height: 40%;
+    float: left;
+    margin-top: 1%;
+    margin-left: 1%;
+    margin-right: 2%;
+    border-radius: 10%;
+}
+
+.nav {
+    background-color: black;
+}
+
+.nav li {
+    margin-left: 4%;
+    display: inline-block;
+}
+
+.nav li a {
+    color: white;
+}
+
+.desc {
+    padding-top: 2.5%;
+}
+
+.buttons {
+    margin-left: 6.5%;
+}
