@@ -1,6 +1,8 @@
 import React from 'react';   
 import DeleteRental from './DeleteRental.js';
 import UpdateRental from './UpdateRental.js'
+import "../css/App.css";
+import "bulma/css/bulma.css";
 
 class PopUp extends React.Component {  
     constructor(props) {
@@ -11,6 +13,7 @@ class PopUp extends React.Component {
     }
 
     render() {
+let cityState = `${this.props.rental.city},${this.props.rental.state}`;
         return (
             <div>
                 <div>
@@ -29,11 +32,19 @@ class PopUp extends React.Component {
                         <DeleteRental baseURL = {this.props.baseURL} rental = {this.props.rental} getAll = {this.props.getAll} update = {this.props.update}/>
                         <UpdateRental baseURL = {this.props.baseURL} rental = {this.props.rental} getAll = {this.props.getAll} update = {this.props.update}/>
                     </div>
+<div>
+            <iframe
+              title="location"
+              samesite="None"
+              width="100"
+              height="100"
+              src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyB0KXJrVh4G4vAfEoEU2_fEcjXsQDKpuvE&q=${cityState}`}
+            ></iframe>
+          </div>
                         {/* <p className = 'inline like'>{this.props.rental.like}</p> */}
                 </div>
             </div>
         );  
     }  
 }  
-
 export default PopUp;

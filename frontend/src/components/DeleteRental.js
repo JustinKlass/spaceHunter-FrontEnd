@@ -4,7 +4,7 @@ class DeleteRental extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        rental: []
+      rental: []
     };
 
     this.deleteRental = this.deleteRental.bind(this);
@@ -12,7 +12,7 @@ class DeleteRental extends Component {
   }
 
   refreshPage() {
-      window.location.reload(false);
+    window.location.reload(false);
   }
 
   async getRental() {
@@ -35,9 +35,11 @@ class DeleteRental extends Component {
   }
 
   render() {
-      return (
-        <button onClick={() => this.deleteRental(this.props.rental._id)}>Delete</button>
-      )
+    return (
+      <button onClick={() => this.deleteRental(this.props.rental._id)}>
+        Delete
+      </button>
+    );
   }
 }
 export default DeleteRental;

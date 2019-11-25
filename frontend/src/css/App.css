@@ -1,100 +1,146 @@
 .header {
-    margin: 0;
-    text-align: center;
+  margin: 0;
+  text-align: center;
 }
 
 .header img {
-    height: auto;
-    width: 100%;
+  height: auto;
+  width: 100%;
 }
 
 .searchBar {
-    width: 50%;
-    height: 4.5em;
-    margin-top: 3%;
-    margin-left: 18%;
-    background-color: #efefef;
+  width: 50%;
+  height: 4.5em;
+  margin-top: 3%;
+  margin-left: 18%;
+  background-color: #efefef;
 }
 
 .childContainer {
-    width: 33%;
-    height: 25em;
-    margin-top: 1%;
-    margin-left: 0.15%;
-    vertical-align: top;
-    display: inline-block;
+  width: 33%;
+  height: 25em;
+  margin-top: 1%;
+  margin-left: 0.15%;
+  vertical-align: top;
+  display: inline-block;
 }
 
 .childContainer:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .childImage {
-    width: 100%;
-    height: 65%;
-    padding-left: 1%;
+  width: 100%;
+  height: 65%;
+  padding-left: 1%;
 }
 
 .inline {
-    display: inline-block;
+  display: inline-block;
 }
 
 .block {
-    display: block;
+  display: block;
 }
 
-.popup {  
-    top: 0;  
-    left: 0;  
-    right: 0;  
-    bottom: 0;  
-    width: 55%;  
-    height: 55%;  
-    margin: auto;
-    position: fixed;  
-    border-radius: 5%;
-    background-color: rgba(239, 239, 239, 1);  
-  }  
-.popup\_inner {  
-    top: 25%; 
-    left: 25%;  
-    right: 25%;  
-    bottom: 25%;  
-    margin: auto;  
-    border-radius: 10%;  
-    position: absolute; 
-    background: white;  
+.popup {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 55%;
+  height: 55%;
+  margin: auto;
+  position: fixed;
+  border-radius: 5%;
+  background-color: rgba(239, 239, 239, 1);
+}
+.popup\_inner {
+  top: 25%;
+  left: 25%;
+  right: 25%;
+  bottom: 25%;
+  margin: auto;
+  border-radius: 10%;
+  position: absolute;
+  background: white;
+}
+
+.newRentalPopUp {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.newRentalPopUpInner {
+  top: 8%;
+  left: 8%;
+  right: 8%;
+  bottom: 8%;
+  margin: 5px auto;
+  border-radius: 1%;
+  position: absolute;
+  background: white;
+  overflow: scroll;
+}
+
+.newRentalInfo {
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  bottom: 10%;
+  margin: auto;
+  border-radius: 2%;
+  position: absolute;
+  background: white;
 }
 
 .cardImage {
-    width: 40%;
-    height: 40%;
-    float: left;
-    margin-top: 1%;
-    margin-left: 1%;
-    margin-right: 2%;
-    border-radius: 10%;
+  width: 40%;
+  height: 40%;
+  float: left;
+  margin-top: 1%;
+  margin-left: 1%;
+  margin-right: 2%;
+  border-radius: 10%;
 }
 
-.nav {
-    background-color: black;
+#exitBtn {
+  margin-top: 2%;
+  margin-left: 94%;
 }
 
-.nav li {
-    margin-left: 4%;
-    display: inline-block;
+nav {
+  background-color: black;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  display: flex;
 }
 
-.nav li a {
-    color: white;
+.navitem {
+  float: right;
+  font-weight: 700;
 }
 
 .desc {
-    padding-top: 2.5%;
+  padding-top: 2.5%;
 }
 
 .buttons {
-    margin-left: 6.5%;
+  margin-left: 6.5%;
+}
+
+.newRentalLogo {
+  padding-left: 100px;
+
+  /* margin: 0px auto;
+  text-align: center; */
 }
 
 #button {
