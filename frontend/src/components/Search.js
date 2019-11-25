@@ -1,5 +1,6 @@
-import React, { Component } from "react";
-import axios from "axios";
+import React, {Component} from 'react';
+import PopUp from './PopUp';  
+import axios from 'axios';
 
 class Search extends Component {
     constructor(props) {
@@ -20,27 +21,22 @@ class Search extends Component {
         this.handleChange = this.handleChange.bind(this);
     }
 
-  componentDidMount() {
-    this.getAll();
-  }
+    componentDidMount() {
+        this.getAll();
+    }
 
-  async getAll() {
-    const response = await axios.get(`${this.props.baseURL}/rental`);
-    const rental = response.data;
-    this.setState({
-      match: rental
-    });
-    console.log(this.state.match);
-  }
+    async getAll() {
+        const response = await axios.get(`${this.props.baseURL}/rental`);
+        const rental = response.data
+        this.setState({
+                match: rental
+            })
+            console.log(this.state.match)
+    }
 
-  async getRentals() {
-    const response = await axios.get(`${this.props.baseURL}/rental`);
-    const data = response.data;
-    this.setState({
-      results: data
-    });
-    this.state.results.map(result => {
-      if (result.location === this.state.location) {
+    async getRentals() {
+        const response = await axios.get(`${this.props.baseURL}/rental`);
+        const data = response.data
         this.setState({
             results: data,
         })
@@ -70,19 +66,8 @@ class Search extends Component {
                 country: event.target.value.toLowerCase()
             });
 
-  handleChange(event) {
-    if (event.target.value === "" || event.target.value === null) {
-      this.setState({
-        bool: false,
-        location: event.target.value
-      });
-    } else {
-      this.setState({
-        bool: true,
-        location: event.target.value.toLowerCase()
-      });
+        }
     }
-  }
 
     togglePopUp(event) {
         console.log(event.currentTarget.id);
