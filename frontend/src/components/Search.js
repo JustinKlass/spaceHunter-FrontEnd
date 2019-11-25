@@ -67,6 +67,8 @@ class Search extends Component {
             }
         })
     }
+  })
+}
 
   handleChange(event) {
     if (event.target.value === "" || event.target.value === null) {
