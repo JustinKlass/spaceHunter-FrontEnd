@@ -16,6 +16,8 @@ class Search extends Component {
             match: [],
             filtered: []
         }
+        this.getAll = this.getAll.bind(this);
+        this.update = this.update.bind(this);
         this.getRentals = this.getRentals.bind(this);
         this.togglePopUp = this.togglePopUp.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -80,6 +82,12 @@ class Search extends Component {
         })
     }  
 
+    update() {
+        this.setState({
+            show: !this.state.show
+        })
+    }
+
 
     render() {
         return (
@@ -101,7 +109,7 @@ class Search extends Component {
                                     <div className = 'popup'>
                                         <div className='popup\_inner'>
                                             <button onClick = {this.togglePopUp} className='popup\_inner'>Exit</button>
-                                            <PopUp rental = {this.state.currentPop[0]} baseURL={this.props.baseURL}/>
+                                            <PopUp rental = {this.state.currentPop[0]} baseURL={this.props.baseURL} getAll = {this.getAll} update = {this.update}/>
                                         </div>
                                     </div>
                                     : null

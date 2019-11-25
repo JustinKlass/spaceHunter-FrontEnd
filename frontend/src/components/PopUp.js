@@ -1,10 +1,12 @@
 import React from 'react';   
 import DeleteRental from './DeleteRental.js';
+import UpdateRental from './UpdateRental.js'
 
 class PopUp extends React.Component {  
     constructor(props) {
         super(props);
         this.state = {
+            showEdit: false
         }
     }
 
@@ -25,7 +27,7 @@ class PopUp extends React.Component {
                     </div>
                     <div className = 'inline buttons'>
                         <DeleteRental baseURL = {this.props.baseURL} rental = {this.props.rental}/>
-                        <button>Edit</button>
+                        <UpdateRental baseURL = {this.props.baseURL} rental = {this.props.rental} getAll = {this.props.getAll} update = {this.props.update}/>
                     </div>
                         {/* <p className = 'inline like'>{this.props.rental.like}</p> */}
                 </div>
