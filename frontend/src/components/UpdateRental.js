@@ -260,7 +260,7 @@ class UpdateRental extends Component {
                 </div>
               </div>
               <footer class="modal-card-foot">
-                <input class="button is-success" type="submit" value="Submit" />
+                <input class="button is-white" type="submit" value="Submit" />
               </footer>
             </form>
           </section>
@@ -274,7 +274,7 @@ class UpdateRental extends Component {
     return (
       <div>
         <button
-          class="button is-success"
+          class="button is-outlined"
           onClick={() => {
             this.togglePopUp();
           }}

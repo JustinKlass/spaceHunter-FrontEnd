@@ -73,7 +73,7 @@ class PopUp extends React.Component {
           </section>
           <footer class="modal-card-foot">
             <div class="">
-              <DeleteRental
+              <UpdateRental
                 baseURL={this.props.baseURL}
                 rental={this.props.rental}
                 getAll={this.props.getAll}
@@ -82,7 +82,7 @@ class PopUp extends React.Component {
             </div>
             &nbsp;&nbsp;
             <div class="">
-              <UpdateRental
+              <DeleteRental
                 baseURL={this.props.baseURL}
                 rental={this.props.rental}
                 getAll={this.props.getAll}

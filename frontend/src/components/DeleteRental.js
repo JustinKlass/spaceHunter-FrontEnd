@@ -37,7 +37,7 @@ class DeleteRental extends Component {
   render() {
     return (
       <button
-        class="button is-warning"
+        class="button is-black"
         onClick={() => this.deleteRental(this.props.rental._id)}
       >
         Delete
