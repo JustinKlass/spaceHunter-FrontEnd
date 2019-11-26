@@ -22,7 +22,8 @@ class App extends Component {
     super(props);
     this.state = {
       rentals: [],
-      showNew: false
+      showNew: false,
+      currentUser: {}
     };
     this.togglePopUp = this.togglePopUp.bind(this);
     this.handleAddRental = this.handleAddRental.bind(this);
