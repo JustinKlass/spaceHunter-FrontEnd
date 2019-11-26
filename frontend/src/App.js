@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === "development") {
 }
 // baseURL =
 //   "https://spacehunter-backend.herokuapp.com" || "http://localhost:3003";
-
+console.log("TEST");
 console.log("current base URL:", baseURL);
 
 //WHERE TO BIND THE
