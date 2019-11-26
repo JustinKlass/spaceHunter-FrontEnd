@@ -96,6 +96,7 @@ class NewProfile extends Component {
     });
     this.props.handleAddRental(response.data);
     this.props.togglePopUp();
+    window.location.reload(false);
   }
 
   render() {
