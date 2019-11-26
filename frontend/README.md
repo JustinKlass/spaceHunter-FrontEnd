@@ -1,4 +1,4 @@
-<img src="https://github.com/JustinKlass/spaceHunter-FrontEnd/public/images/spaceHunterLogo4.png"></img>
+<img src="https://github.com/JustinKlass/spaceHunter-FrontEnd/blob/master/frontend/public/images/spaceHunterLogo4.png"></img>
 
 <h2>Space Hunter</h2>
 <p>Is a commercial and residental marketplace for renters and rentees looking to make some extra cash on their used space.</p>
@@ -65,9 +65,9 @@ Various technologies were used to confirgure this application intended for DESKT
 <h3>APIs</h3>
 <p><strong>APIs used to provide data and/or images for this application:</strong></p>
 <ul>
-<li>Google Embed Map API<strong>Source:</strong>Google Map API </li><br/>
-<li>Photos on site<strong>Source:</strong> Unsplash <strong>Link: </strong>https://unsplash.com/</li><br/>
+<li>Google Embed Map API</li>
+<li>Photos on site <strong>Source:</strong> Unsplash <strong>Link: </strong>https://unsplash.com/</li><br/>
 </ul>
 
 <h3>Images</h3>
-<img src="https://github.com/JustinKlass/spaceHunter-FrontEnd/public/images/responsiveDesign.png"></img>
+<img src="https://github.com/JustinKlass/spaceHunter-FrontEnd/blob/master/frontend/public/images/responsiveDesign.png"></img>
