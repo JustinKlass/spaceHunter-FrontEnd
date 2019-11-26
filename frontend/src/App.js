@@ -11,8 +11,10 @@ let baseURL = process.env.REACT_APP_BASEURL;
 if (process.env.NODE_ENV === "development") {
   baseURL = "http://localhost:3003";
 } else {
-  baseURL = "https://fathomless-sierra-68956.herokuapp.com";
+  baseURL = "https://spacehunter-backend.herokuapp.com";
 }
+// baseURL =
+//   "https://spacehunter-backend.herokuapp.com" || "http://localhost:3003";
 
 console.log("current base URL:", baseURL);
 
