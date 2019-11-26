@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "bulma/css/bulma.css";
-const baseURL = "http://localhost:3003";
 
 class NewProfile extends Component {
   constructor(props) {
@@ -69,7 +68,7 @@ class NewProfile extends Component {
 
   async handleSubmit(event) {
     event.preventDefault();
-    const response = await axios.post(`${baseURL}/rental/`, {
+    const response = await axios.post(`${this.props.baseURL}/rental`, {
       owner: this.state.owner,
       city: this.state.city,
       state: this.state.state,

@@ -49,7 +49,7 @@ class UpdateRental extends Component {
   async handleEditSubmit(event) {
     try {
       event.preventDefault();
-      const url = `http://localhost:3003/rental/${this.props.rental._id}`;
+      const url = `${this.props.baseURL}/${this.props.rental._id}`;
       const reload = {
         owner: this.state.owner,
         city: this.state.city,
