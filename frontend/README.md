@@ -1,7 +1,9 @@
 <img src="https://github.com/JustinKlass/spaceHunter-FrontEnd/blob/master/frontend/public/images/spaceHunterLogo4.png"></img>
 
 <h2>Space Hunter</h2>
-<p>Is a commercial and residental marketplace for renters and rentees looking to make some extra cash on their used space.</p>
+<p>Space Hunter is a commercial and residental marketplace for renters and rentees looking to make some extra cash on their used space.</p>
+
+## REACT
 
 This project was bootstrapped with Create React App.
 
