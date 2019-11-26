@@ -245,7 +245,7 @@ class NewProfile extends Component {
             </div>
             <div className="field">
               <label htmlFor="image" className="inline">
-                Image
+                Image Url:
               </label>
               <input
                 className="input"
