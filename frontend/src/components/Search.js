@@ -15,7 +15,8 @@ class Search extends Component {
       city: null,
       results: [],
       match: [],
-      filtered: []
+      filtered: [],
+      search: 'Where To Now?'
     };
     this.getAll = this.getAll.bind(this);
     this.update = this.update.bind(this);
@@ -62,17 +63,20 @@ class Search extends Component {
   }
 
   handleChange(event) {
+      this.setState({
+          [event.target.name]: event.target.value 
+      })
     if (event.target.value === "" || event.target.value === null) {
       this.setState({
-        bool: false
+        bool: false,
       });
     } else {
       this.setState({
         bool: true,
         city: event.target.value.toLowerCase(),
         state: event.target.value.toLowerCase(),
-        country: event.target.value.toLowerCase()
-      });
+        country: event.target.value.toLowerCase(),
+    });
     }
   }
 
@@ -101,9 +105,12 @@ class Search extends Component {
           <div class="searchChild1">
             <input
               type="text"
-              placeholder="Where To Now?"
+              placeholder={this.state.search}
               onChange={this.handleChange}
               className="searchBar"
+              id="searchBar"
+              value={this.state.search}
+              name="search"
             ></input>
           </div>
           <div class="searchChild2">
@@ -115,6 +122,17 @@ class Search extends Component {
                 this.state.bool === false ? this.getAll() : this.getRentals();
               }}
             ></input>
+        &nbsp;
+             <button
+             className='button' 
+             onClick={() => {
+                 this.getAll()
+                 this.setState({
+                     search: ""
+                 })
+                 }}>
+                 Clear
+             </button>
           </div>
         </div>
         <div class="parentColumn">
