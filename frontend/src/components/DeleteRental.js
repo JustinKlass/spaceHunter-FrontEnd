@@ -36,7 +36,10 @@ class DeleteRental extends Component {
 
   render() {
     return (
-      <button onClick={() => this.deleteRental(this.props.rental._id)}>
+      <button
+        class="button is-warning"
+        onClick={() => this.deleteRental(this.props.rental._id)}
+      >
         Delete
       </button>
     );

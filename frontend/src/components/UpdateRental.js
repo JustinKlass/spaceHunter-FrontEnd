@@ -62,7 +62,7 @@ class UpdateRental extends Component {
         available: this.state.available
       };
       const updatedRental = await axios.put(url, reload);
-      console.log(updatedRental.data.city)
+      console.log(updatedRental.data.city);
       this.setState({
         owner: this.state.owner,
         city: this.state.city,
@@ -78,116 +78,122 @@ class UpdateRental extends Component {
       });
     } catch (err) {}
     this.setState({
-        showEdit: false,
-    })
+      showEdit: false
+    });
     this.props.getAll();
     this.props.update();
   }
-//   owner: this.state.owner,
-//   city: this.state.city,
-//   state: this.state.state,
-//   country: this.state.country,
-//   price: this.state.price,
-//   contactInfo: this.state.contactInfo,
-//   occupancy: this.state.occupancy,
-//   like: this.state.like,
-//   description: this.state.description,
-//   image: this.state.image,
-//   available: this.state.available
+  //   owner: this.state.owner,
+  //   city: this.state.city,
+  //   state: this.state.state,
+  //   country: this.state.country,
+  //   price: this.state.price,
+  //   contactInfo: this.state.contactInfo,
+  //   occupancy: this.state.occupancy,
+  //   like: this.state.like,
+  //   description: this.state.description,
+  //   image: this.state.image,
+  //   available: this.state.available
   togglePopUp() {
     this.setState({
-        showEdit: !this.state.showEdit
-    })
-  }  
-
+      showEdit: !this.state.showEdit
+    });
+  }
 
   edit() {
-        return (
-        <div className = 'popup'>
-            <div  className = 'popup\_inner'>
-                <form onSubmit={this.handleEditSubmit}>
-                    <input
-          type="text"
-          name="owner"
-          value={this.state.owner}
-          onChange={this.handleOnchange}
-        />
+    return (
+      <div className="popup">
+        <div className="popup\_inner">
+          <form onSubmit={this.handleEditSubmit}>
+            <input
+              type="text"
+              name="owner"
+              value={this.state.owner}
+              onChange={this.handleOnchange}
+            />
 
-        <input
-          type="text"
-          name="city"
-          value={this.state.city}
-          onChange={this.handleOnchange}
-        />
-        <input
-          type="text"
-          name="state"
-          value={this.state.state}
-          onChange={this.handleOnchange}
-        />
-        <input
-          type="text"
-          name="country"
-          value={this.state.country}
-          onChange={this.handleOnchange}
-        />
-        <input
-          type="number"
-          name="price"
-          value={this.state.price}
-          onChange={this.handleOnchange}
-        />
-        <input
-          type="text"
-          name="contactInfo"
-          value={this.state.contactInfo}
-          onChange={this.handleOnchange}
-        />
-        <input
-          type="text"
-          name="owneroccupancy"
-          value={this.state.occupancy}
-          onChange={this.handleOnchange}
-        />
-        <input
-          type="number"
-          name="like"
-          value={this.state.like}
-          onChange={this.handleOnchange}
-        />
-        <input
-          type="text"
-          name="description"
-          value={this.state.description}
-          onChange={this.handleOnchange}
-        />
-        <input
-          type="text"
-          name="image"
-          value={this.state.image}
-          onChange={this.handleOnchange}
-        />
-        <input
-          type="radio"
-          name="available"
-          value={this.state.available}
-          onChange={this.handleOnchange}
-        />
+            <input
+              type="text"
+              name="city"
+              value={this.state.city}
+              onChange={this.handleOnchange}
+            />
+            <input
+              type="text"
+              name="state"
+              value={this.state.state}
+              onChange={this.handleOnchange}
+            />
+            <input
+              type="text"
+              name="country"
+              value={this.state.country}
+              onChange={this.handleOnchange}
+            />
+            <input
+              type="number"
+              name="price"
+              value={this.state.price}
+              onChange={this.handleOnchange}
+            />
+            <input
+              type="text"
+              name="contactInfo"
+              value={this.state.contactInfo}
+              onChange={this.handleOnchange}
+            />
+            <input
+              type="text"
+              name="owneroccupancy"
+              value={this.state.occupancy}
+              onChange={this.handleOnchange}
+            />
+            <input
+              type="number"
+              name="like"
+              value={this.state.like}
+              onChange={this.handleOnchange}
+            />
+            <input
+              type="text"
+              name="description"
+              value={this.state.description}
+              onChange={this.handleOnchange}
+            />
+            <input
+              type="text"
+              name="image"
+              value={this.state.image}
+              onChange={this.handleOnchange}
+            />
+            <input
+              type="radio"
+              name="available"
+              value={this.state.available}
+              onChange={this.handleOnchange}
+            />
 
-        <input type="submit" value="Submit"/>
-      </form>
-            </div>
+            <input type="submit" value="Submit" />
+          </form>
         </div>
-        );
+      </div>
+    );
   }
 
   render() {
     const showEditForm = this.state.showEdit ? this.edit() : null;
     return (
-        <div>
-            <button onClick = {() => {this.togglePopUp()}}>Edit</button>
-            {showEditForm}
-        </div>
+      <div>
+        <button
+          class="button is-success"
+          onClick={() => {
+            this.togglePopUp();
+          }}
+        >
+          Edit
+        </button>
+        {showEditForm}
+      </div>
     );
   }
 }
