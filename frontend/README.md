@@ -1,4 +1,7 @@
-<img src="/public/images/spaceHunterLogo4.png"></img>
+<img src="https://github.com/JustinKlass/spaceHunter-FrontEnd/public/images/spaceHunterLogo4.png"></img>
+
+<h2>Space Hunter</h2>
+<p>Is a commercial and residental marketplace for renters and rentees looking to make some extra cash on their used space.</p>
 
 This project was bootstrapped with Create React App.
 
@@ -29,42 +32,42 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+<h2>User Guide</h2>
+1.) User can input a location/destination they would like to find a rental space in to see, if any, what places are available for rent<br/>
+<p></p>
+2.)User can also click on current rentals available from the home page which will display all rental information once the user selects a rental card<br/>
+<p></p>
+3.) User has the ability to list a new rental simply by clicking the "New" button at the top which will bring up a new rental form<br/>
+<p></p>
+4.) User can edit and/or delete posted rentals<br/>
+<p></p>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<h2>Specs & App Details</h2>
+Various technologies were used to confirgure this application intended for DESKTOP use.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<h3>Frontend Technologies Used</h3>
+<ul>
+ <li>React</li>
+ <li>Javascript</li>
+<li>HTML</li>
+<li>CSS (Bulma Framework)</li>
+ <li>Photoshop</li>
+</ul>
+  
+<h3>User Story</h3>
+- User should be able to add new rental<br/>
+- User should be able to view available rentals<br/>
+- User should be able to delete and/or edit rental post<br/>
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<h3>Site Link</h3>
+<a href="http://spacehunter.surge.sh/"> Space Hunter </a>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<h3>APIs</h3>
+<p><strong>APIs used to provide data and/or images for this application:</strong></p>
+<ul>
+<li>Google Embed Map API<strong>Source:</strong>Google Map API </li><br/>
+<li>Photos on site<strong>Source:</strong> Unsplash <strong>Link: </strong>https://unsplash.com/</li><br/>
+</ul>
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+<h3>Images</h3>
+<img src="https://github.com/JustinKlass/spaceHunter-FrontEnd/public/images/responsiveDesign.png"></img>
