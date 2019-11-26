@@ -49,7 +49,7 @@ class UpdateRental extends Component {
   async handleEditSubmit(event) {
     try {
       event.preventDefault();
-      const url = `${this.props.baseURL}/${this.props.rental._id}`;
+      const url = `${this.props.baseURL}/rental/${this.props.rental._id}`;
       const reload = {
         owner: this.state.owner,
         city: this.state.city,
@@ -196,12 +196,12 @@ class UpdateRental extends Component {
               </div>
 
               <div className="field">
-                <label htmlFor="owneroccupancy">Occupancy</label>
+                <label htmlFor="occupancy">Occupancy</label>
                 <div className="control">
                   <input
                     className="input"
                     type="text"
-                    name="owneroccupancy"
+                    name="occupancy"
                     value={this.state.occupancy}
                     onChange={this.handleOnchange}
                   />
