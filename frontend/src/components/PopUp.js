@@ -4,17 +4,6 @@ import UpdateRental from "./UpdateRental.js";
 import "../css/App.css";
 import "bulma/css/bulma.css";
 
-let baseURL = process.env.REACT_APP_BASEURL;
-
-// SETS BASE UTL TO LOCAL HOST 3003 OR HEROKU APP
-if (process.env.NODE_ENV === "development") {
-  baseURL = "http://localhost:3003";
-} else {
-  baseURL = "https://fathomless-sierra-68956.herokuapp.com";
-}
-
-console.log("current base URL:", baseURL);
-
 class PopUp extends React.Component {
   constructor(props) {
     super(props);
@@ -31,9 +20,9 @@ class PopUp extends React.Component {
         <div class="modal-card">
           <header class="modal-card-head">
             <p class="modal-card-title">Rental Information</p>
-            <a href={`${baseURL}`}>
-              <button class="delete">CLOSE BUTTON</button>
-            </a>
+            <button class="delete" onClick={this.props.update}>
+              CLOSE BUTTON
+            </button>
           </header>
           <section class="modal-card-body">
             <div>
