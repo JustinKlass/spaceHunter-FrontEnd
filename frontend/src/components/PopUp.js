@@ -19,7 +19,9 @@ class PopUp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showEdit: false
+      showEdit: false,
+      tweet: 'https://twitter.com/intent/tweet?text=',
+      tweetImg: 'image='
     };
   }
 
@@ -31,9 +33,7 @@ class PopUp extends React.Component {
         <div class="modal-card">
           <header class="modal-card-head">
             <p class="modal-card-title">Rental Information</p>
-            <a href={`${baseURL}`}>
-              <button class="delete">CLOSE BUTTON</button>
-            </a>
+              <button class="delete" onClick={this.props.update}></button>
           </header>
           <section class="modal-card-body">
             <div>
@@ -44,6 +44,11 @@ class PopUp extends React.Component {
                   alt={this.props.rental.description}
                 />
                 <div class="parentRentalInfoPop">
+
+                <a class="twitter-share-button"
+                    href= {this.state.tweet + this.props.rental.description + '%0D%0A' + baseURL + 'img=' + this.props.rental.image}>
+                Tweet</a>
+
                   <p className="desc">
                     <strong>Description:</strong> <br />
                     {this.props.rental.description}

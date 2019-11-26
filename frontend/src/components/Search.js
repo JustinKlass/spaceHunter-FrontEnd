@@ -95,10 +95,10 @@ class Search extends Component {
 
   render() {
     return (
-      <div class="searchParent">
+      <div className="searchParent">
         {/* SEARCH BAR */}
         <div className="searchContainer">
-          <div class="searchChild1">
+          <div className="searchChild1">
             <input
               type="text"
               placeholder="Where To Now?"
@@ -106,7 +106,7 @@ class Search extends Component {
               className="searchBar"
             ></input>
           </div>
-          <div class="searchChild2">
+          <div className="searchChild2">
             <input
               type="submit"
               placeholder="Search"
@@ -117,7 +117,7 @@ class Search extends Component {
             ></input>
           </div>
         </div>
-        <div class="parentColumn">
+        <div className="parentColumn">
           {this.state.match.map(match => {
             return (
               <div key={match._id} className="childColumn">
