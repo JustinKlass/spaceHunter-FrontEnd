@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "bulma/css/bulma.css";
+
 class UpdateRental extends Component {
   constructor(props) {
     super(props);
@@ -62,7 +64,7 @@ class UpdateRental extends Component {
         available: this.state.available
       };
       const updatedRental = await axios.put(url, reload);
-      console.log(updatedRental.data.city)
+      console.log(updatedRental.data.city);
       this.setState({
         owner: this.state.owner,
         city: this.state.city,
@@ -78,116 +80,209 @@ class UpdateRental extends Component {
       });
     } catch (err) {}
     this.setState({
-        showEdit: false,
-    })
+      showEdit: false
+    });
     this.props.getAll();
     this.props.update();
   }
-//   owner: this.state.owner,
-//   city: this.state.city,
-//   state: this.state.state,
-//   country: this.state.country,
-//   price: this.state.price,
-//   contactInfo: this.state.contactInfo,
-//   occupancy: this.state.occupancy,
-//   like: this.state.like,
-//   description: this.state.description,
-//   image: this.state.image,
-//   available: this.state.available
+  //   owner: this.state.owner,
+  //   city: this.state.city,
+  //   state: this.state.state,
+  //   country: this.state.country,
+  //   price: this.state.price,
+  //   contactInfo: this.state.contactInfo,
+  //   occupancy: this.state.occupancy,
+  //   like: this.state.like,
+  //   description: this.state.description,
+  //   image: this.state.image,
+  //   available: this.state.available
   togglePopUp() {
     this.setState({
-        showEdit: !this.state.showEdit
-    })
-  }  
-
+      showEdit: !this.state.showEdit
+    });
+  }
 
   edit() {
-        return (
-        <div className = 'popup'>
-            <div  className = 'popup\_inner'>
-                <form onSubmit={this.handleEditSubmit}>
-                    <input
-          type="text"
-          name="owner"
-          value={this.state.owner}
-          onChange={this.handleOnchange}
-        />
+    return (
+      <div class="modal is-active">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">Edit Rental</p>
+            <button
+              class="delete"
+              aria-label="close"
+              onClick={this.props.update}
+            ></button>
+          </header>
+          <section class="modal-card-body">
+            <form onSubmit={this.handleEditSubmit}>
+              <div className="field">
+                <label htmlFor="owner">Owner</label>
+                <div className="control">
+                  <input
+                    className="input"
+                    type="text"
+                    name="owner"
+                    value={this.state.owner}
+                    onChange={this.handleOnchange}
+                  />
+                </div>
+              </div>
 
-        <input
-          type="text"
-          name="city"
-          value={this.state.city}
-          onChange={this.handleOnchange}
-        />
-        <input
-          type="text"
-          name="state"
-          value={this.state.state}
-          onChange={this.handleOnchange}
-        />
-        <input
-          type="text"
-          name="country"
-          value={this.state.country}
-          onChange={this.handleOnchange}
-        />
-        <input
-          type="number"
-          name="price"
-          value={this.state.price}
-          onChange={this.handleOnchange}
-        />
-        <input
-          type="text"
-          name="contactInfo"
-          value={this.state.contactInfo}
-          onChange={this.handleOnchange}
-        />
-        <input
-          type="text"
-          name="owneroccupancy"
-          value={this.state.occupancy}
-          onChange={this.handleOnchange}
-        />
-        <input
-          type="number"
-          name="like"
-          value={this.state.like}
-          onChange={this.handleOnchange}
-        />
-        <input
-          type="text"
-          name="description"
-          value={this.state.description}
-          onChange={this.handleOnchange}
-        />
-        <input
-          type="text"
-          name="image"
-          value={this.state.image}
-          onChange={this.handleOnchange}
-        />
-        <input
-          type="radio"
-          name="available"
-          value={this.state.available}
-          onChange={this.handleOnchange}
-        />
+              <div className="field">
+                <label htmlFor="city">City</label>
+                <div className="control">
+                  <input
+                    className="input"
+                    type="text"
+                    name="city"
+                    value={this.state.city}
+                    onChange={this.handleOnchange}
+                  />
+                </div>
+              </div>
 
-        <input type="submit" value="Submit"/>
-      </form>
-            </div>
+              <div className="field">
+                <label htmlFor="state">State</label>
+                <div className="control">
+                  <input
+                    className="input"
+                    type="text"
+                    name="state"
+                    value={this.state.state}
+                    onChange={this.handleOnchange}
+                  />
+                </div>
+              </div>
+
+              <div className="field">
+                <label htmlFor="country">Country</label>
+                <div className="control">
+                  <input
+                    className="input"
+                    type="text"
+                    name="country"
+                    value={this.state.country}
+                    onChange={this.handleOnchange}
+                  />
+                </div>
+              </div>
+
+              <div className="field">
+                <label htmlFor="price">Price</label>
+                <div className="control">
+                  <input
+                    className="input"
+                    type="number"
+                    name="price"
+                    value={this.state.price}
+                    onChange={this.handleOnchange}
+                  />
+                </div>
+              </div>
+
+              <div className="field">
+                <label htmlFor="contactInfo">Contact Info</label>
+                <div className="control">
+                  <input
+                    className="input"
+                    type="text"
+                    name="contactInfo"
+                    value={this.state.contactInfo}
+                    onChange={this.handleOnchange}
+                  />
+                </div>
+              </div>
+
+              <div className="field">
+                <label htmlFor="owneroccupancy">Occupancy</label>
+                <div className="control">
+                  <input
+                    className="input"
+                    type="text"
+                    name="owneroccupancy"
+                    value={this.state.occupancy}
+                    onChange={this.handleOnchange}
+                  />
+                </div>
+              </div>
+
+              <div className="field">
+                <label htmlFor="likes">Likes:</label>
+                <div className="control">
+                  <input
+                    className="input"
+                    type="number"
+                    name="like"
+                    value={this.state.like}
+                    onChange={this.handleOnchange}
+                  />
+                </div>
+              </div>
+
+              <div className="field">
+                <label htmlFor="description">Description</label>
+                <div className="control">
+                  <input
+                    className="input"
+                    type="text"
+                    name="description"
+                    value={this.state.description}
+                    onChange={this.handleOnchange}
+                  />
+                </div>
+              </div>
+
+              <div className="field">
+                <label htmlFor="image">Image URL</label>
+                <div className="control">
+                  <input
+                    className="input"
+                    type="text"
+                    name="image"
+                    value={this.state.image}
+                    onChange={this.handleOnchange}
+                  />
+                </div>
+              </div>
+
+              <div className="field">
+                <label htmlFor="available">Available ?</label>
+                <div className="control">
+                  <input
+                    className="radio"
+                    type="radio"
+                    name="available"
+                    value={this.state.available}
+                    onChange={this.handleOnchange}
+                  />
+                </div>
+              </div>
+              <footer class="modal-card-foot">
+                <input class="button is-success" type="submit" value="Submit" />
+              </footer>
+            </form>
+          </section>
         </div>
-        );
+      </div>
+    );
   }
 
   render() {
     const showEditForm = this.state.showEdit ? this.edit() : null;
     return (
-        <div>
-            <button onClick = {() => {this.togglePopUp()}}>Edit</button>
-            {showEditForm}
-        </div>
+      <div>
+        <button
+          class="button is-success"
+          onClick={() => {
+            this.togglePopUp();
+          }}
+        >
+          Edit
+        </button>
+        {showEditForm}
+      </div>
     );
   }
 }

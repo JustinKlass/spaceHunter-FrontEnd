@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import PopUp from "./PopUp";
 import axios from "axios";
+import "bulma/css/bulma.css";
+
 class Search extends Component {
   constructor(props) {
     super(props);
@@ -21,9 +23,11 @@ class Search extends Component {
     this.togglePopUp = this.togglePopUp.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
+
   componentDidMount() {
     this.getAll();
   }
+
   async getAll() {
     const response = await axios.get(`${this.props.baseURL}/rental`);
     const rental = response.data;
@@ -39,6 +43,8 @@ class Search extends Component {
       filtered: [],
       results: data
     });
+    console.log(this.state.results);
+
     this.state.results.forEach(result => {
       if (
         result.city.toLowerCase() === this.state.city ||
@@ -82,64 +88,90 @@ class Search extends Component {
       show: !this.state.show
     });
   }
+
   render() {
     return (
-      <div>
+      <div class="searchParent">
         {/* SEARCH BAR */}
-        <div className="form">
-          {/* <label ></label> */}
-          <input
-            type="text"
-            placeholder="Where To Now?"
-            onChange={this.handleChange}
-            className="searchBar"
-          ></input>
-          <input
-            type="submit"
-            placeholder="Search"
-            onClick={() => {
-              this.state.bool === false ? this.getAll() : this.getRentals();
-            }}
-          ></input>
+        <div className="searchContainer">
+          <div class="searchChild1">
+            <input
+              type="text"
+              placeholder="Where To Now?"
+              onChange={this.handleChange}
+              className="searchBar"
+            ></input>
+          </div>
+          <div class="searchChild2">
+            <input
+              type="submit"
+              placeholder="Search"
+              className="button"
+              onClick={() => {
+                this.state.bool === false ? this.getAll() : this.getRentals();
+              }}
+            ></input>
+          </div>
         </div>
-        {this.state.match.map(match => {
-          return (
-            <div key={match._id} className="childContainer">
-              {this.state.currentPop && this.state.show ? (
-                <div className="popup">
-                  <div className="popup\_inner">
-                    <button onClick={this.togglePopUp} className="popup\_inner">
-                      Exit
-                    </button>
-                    <PopUp
-                      rental={this.state.currentPop[0]}
-                      baseURL={this.props.baseURL}
-                      getAll={this.getAll}
-                      update={this.update}
-                    />
+        <div class="parentColumn">
+          {this.state.match.map(match => {
+            return (
+              <div key={match._id} className="childColumn">
+                {this.state.currentPop && this.state.show ? (
+                  <PopUp
+                    rental={this.state.currentPop[0]}
+                    baseURL={this.props.baseURL}
+                    getAll={this.getAll}
+                    update={this.update}
+                  />
+                ) : null}
+                <div
+                  className="grandchild"
+                  id={match._id}
+                  onClick={this.togglePopUp}
+                >
+                  <img
+                    className="childImage"
+                    src={match.image}
+                    alt={match.description}
+                  />
+                  <div className="searchRentalAvailable">
+                    <table>
+                      <th>Location</th>
+                      <th>&nbsp;&nbsp;&nbsp;</th>
+                      <th>&nbsp;&nbsp;&nbsp;</th>
+                      <th>Owner</th>
+                      <th>&nbsp;&nbsp;&nbsp;</th>
+                      <th>&nbsp;&nbsp;&nbsp;</th>
+                      <th>Likes:</th>
+                      <th>&nbsp;&nbsp;&nbsp;</th>
+                      <th>&nbsp;&nbsp;&nbsp;</th>
+                      <th>Occupancy</th>
+                      <tr>
+                        <td>
+                          {match.city}, {match.state}, {match.country}
+                        </td>
+                        <td>&nbsp;&nbsp;&nbsp;</td>
+                        <td>&nbsp;&nbsp;&nbsp;</td>
+                        <td>{match.owner}</td>
+                        <td>&nbsp;&nbsp;&nbsp;</td>
+                        <td>&nbsp;&nbsp;&nbsp;</td>
+                        <td class="like">{match.like}</td>
+                        <td>&nbsp;&nbsp;&nbsp;</td>
+                        <td>&nbsp;&nbsp;&nbsp;</td>
+                        <td> {match.occupancy}</td>
+                      </tr>
+                    </table>
+                    <hr />
+                    <h6 class="price"> Price: ${match.price} per night</h6>
+                    <p></p>
+                    <p>{match.available}</p>
                   </div>
                 </div>
-              ) : null}
-              <div className="" id={match._id} onClick={this.togglePopUp}>
-                <img
-                  className="childImage"
-                  src={match.image}
-                  alt={match.description}
-                />
-                <div className="block">
-                  <p className="inline">{match.city}</p>
-                  <p className="inline">{match.state}</p>
-                  <p className="inline">{match.country}</p>
-                  <p className="inline">{match.owner}</p>
-                  <p className="inline like">{match.like}</p>
-                  <p className="inline">{match.price}</p>
-                  <p className="inline">{match.occupancy}</p>
-                  <p className="inline">{match.available}</p>
-                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     );
   }
