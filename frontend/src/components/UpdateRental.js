@@ -49,7 +49,7 @@ class UpdateRental extends Component {
   async handleEditSubmit(event) {
     try {
       event.preventDefault();
-      const url = `${this.props.baseURL}/${this.props.rental._id}`;
+      const url = `${this.props.baseURL}/rental/${this.props.rental._id}`;
       const reload = {
         owner: this.state.owner,
         city: this.state.city,
@@ -104,18 +104,18 @@ class UpdateRental extends Component {
 
   edit() {
     return (
-      <div class="modal is-active">
-        <div class="modal-background"></div>
-        <div class="modal-card">
-          <header class="modal-card-head">
-            <p class="modal-card-title">Edit Rental</p>
+      <div className="modal is-active">
+        <div className="modal-background"></div>
+        <div className="modal-card">
+          <header className="modal-card-head">
+            <p className="modal-card-title">Edit Rental</p>
             <button
-              class="delete"
+              className="delete"
               aria-label="close"
               onClick={this.props.update}
             ></button>
           </header>
-          <section class="modal-card-body">
+          <section className="modal-card-body">
             <form onSubmit={this.handleEditSubmit}>
               <div className="field">
                 <label htmlFor="owner">Owner</label>
@@ -196,12 +196,12 @@ class UpdateRental extends Component {
               </div>
 
               <div className="field">
-                <label htmlFor="owneroccupancy">Occupancy</label>
+                <label htmlFor="occupancy">Occupancy</label>
                 <div className="control">
                   <input
                     className="input"
                     type="text"
-                    name="owneroccupancy"
+                    name="occupancy"
                     value={this.state.occupancy}
                     onChange={this.handleOnchange}
                   />
